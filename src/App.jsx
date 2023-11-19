@@ -2,19 +2,23 @@ import "./App.css";
 import { TwitterFollowCard } from "./twitterFollowCard.jsx";
 
 export function App() {
+  const showSome = (text) => <span>{text}</span>
+
   return (
     <section className="App">
-      <TwitterFollowCard userName="eduardyan" name="EduardYan">
+      <TwitterFollowCard showSome={showSome} userName="eduardyan">
         Eduard Yan
       </TwitterFollowCard>
-      <TwitterFollowCard userName="midudev" name="Midudev">
+
+      <TwitterFollowCard showSome={showSome} userName="midudev">
         Midudev
       </TwitterFollowCard>
 
-      <TwitterFollowCard userName="elon" name="Elon Musk">
+      <TwitterFollowCard showSome={showSome} userName="elon">
         Elon Musk
       </TwitterFollowCard>
-      <TwitterFollowCard userName="oscar" name="Oscar">
+
+      <TwitterFollowCard showSome={showSome} userName="oscar">
         Oscar
       </TwitterFollowCard>
     </section>
