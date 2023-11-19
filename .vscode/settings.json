@@ -18,5 +18,10 @@
     "titleBar.inactiveBackground": "#1d346199",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#1D3461"
+  "peacock.color": "#1D3461",
+  "cSpell.words": [
+    "eduardyan",
+    "elon",
+    "oscar"
+  ]
 }

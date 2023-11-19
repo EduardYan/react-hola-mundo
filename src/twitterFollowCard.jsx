@@ -1,18 +1,34 @@
-export function TwitterFollowCard({ userName, name, isFollowing }) {
-  const imagSrc = `https://2.gravatar.com/avatar/8282e6611626c238cf79371f9066c39fa307b2a0406de67c718c3fbb7bd3c19f`;
+import { useState } from "react";
+
+export function TwitterFollowCard({ children, userName }) {
+  // const state = userSate(false)
+  // const isFollowing = state[0]
+  // const setIsFollowing = state[1]
+  const [isFollowing, setIsFollowing] = useState(false);
+
+  const imagSrc = `https://unavatar.io/github/${userName}`;
+  const text = isFollowing ? "Siguiendo" : "Seguir";
+  const buttonClassName = isFollowing
+    ? "tw-followCard-button is-following"
+    : "tw-followCard-button";
+
+
+  const handlerClick = () => {
+    setIsFollowing(!isFollowing)
+  }
 
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
         <img src={imagSrc} alt="Profile" className="tw-followCard-avatar" />
         <div className="tw-followCard-info">
-          <strong>{name}</strong>
-          <span>@ {userName}</span>
+          <strong>{children}</strong>
+          <span>@{userName}</span>
         </div>
       </header>
 
       <aside>
-        <button className="tw-followCard-button">Seguir</button>
+        <button className={buttonClassName} onClick={handlerClick} >{text}</button>
       </aside>
     </article>
   );
